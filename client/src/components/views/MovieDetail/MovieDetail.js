@@ -4,6 +4,7 @@ import MainImage from '../LandingPage/Sections/MainImage';
 import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
 import { Row } from 'antd';
+import Favorite from './Sections/Favorite';
 
 // Movie를 클릭했을 때의 상세 화면
 
@@ -52,6 +53,10 @@ function MovieDetail(props) {
             />
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto ' }}>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')}/>
+                </div>
 
                 {/* Movie Info */}
 
